@@ -15,7 +15,6 @@ var table      = R.DOM.table
 var qsParams  = qs.parse(window.location.search.replace("?", ""))
 var phrases   = qsParams.phrases || phraseJSON.phrases
 var cardCount = qsParams.count || 0
-var freeUrl   = qsParams.freeUrl || "http://acsspirit.com/walkietalkieimages/jpg/Motorola_Vert.jpg"
 var cards     = new Array(cardCount)
 
 for (var i = 0; i < cardCount; i++) {
@@ -28,47 +27,48 @@ for (var i = 0; i < cardCount; i++) {
 //cell height = 88px
 
 var cellStyles = {
-  border:   "1px solid black",
-  padding:  "8px",
-  width:    "163px",
-  height:   "88px",
-  overflow: "wrap",
-  wordWrap: "break-word",
-  fontSize: "16px",
-  fontFamily: "Ariel, Helvetica, sans-serif"
+  border:        "1px solid black",
+  padding:       "8px",
+  width:         "163px",
+  height:        "88px",
+  overflow:      "wrap",
+  verticalAlign: "middle",
+  wordWrap:      "break-word",
+  fontSize:      "14px",
+  fontFamily:    "Ariel, Helvetica, sans-serif"
 }
 
 var starStyles = {
-  backgroundImage: freeUrl ? "url(" + freeUrl + ")" : null,
-  backgroundRepeat: "no-repeat",
-  backgroundSize:   "contain",
+  backgroundRepeat:   "no-repeat",
+  backgroundSize:     "contain",
   backgroundPosition: "center",
+  verticalAlign:      "middle",
   fontWeight:         "bold",
   fontSize:           "18px"
 }
 
 var headerStyles = {
-  width:    "163",
-  height:   "88px",
+  width:      "163",
+  height:     "88px",
   paddingTop: "16px",
-  fontSize: "56px",
-  textAlign: "center",
+  fontSize:   "56px",
+  textAlign:  "center",
   fontFamily: "Impact, Charcoal, sans-serif"
 }
 
 var headerBlockStyles = {
-  borderTop: "1px solid black",
-  borderLeft: "1px solid black",
-  borderRight: "1px solid black",
+  borderTop:       "1px solid black",
+  borderLeft:      "1px solid black",
+  borderRight:     "1px solid black",
   backgroundColor: "rgba(224, 224, 224, 0.7)"
 }
 
 var tableStyles = {
   borderCollapse: "collapse",
-  tableLayout: "fixed",
-  width:       "816px",
-  height:      "528px",
-  textAlign:   "center"
+  tableLayout:    "fixed",
+  width:          "816px",
+  height:         "528px",
+  textAlign:      "center"
 }
 
 var CardComponent = R.createClass({
@@ -100,7 +100,7 @@ var CardComponent = R.createClass({
       tr({key: 3}, [
         td({key: 1, style: cellStyles}, card.data[0][2]),
         td({key: 2, style: cellStyles}, card.data[1][2]),
-        td({key: 3, style: starStyles}, freeUrl ? "" : "Free Space"),
+        td({key: 3, style: starStyles}, "MOTO Free Space"),
         td({key: 4, style: cellStyles}, card.data[3][2]),
         td({key: 5, style: cellStyles}, card.data[4][2])
       ]),
