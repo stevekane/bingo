@@ -6,7 +6,7 @@ var app        = express()
 var mainHTML   = fs.readFileSync("./templates/main.html", {encoding: "utf8"})
 var printHTML  = fs.readFileSync("./templates/print.html", {encoding: "utf8"})
 
-var PORT = process.ENV.PORT || 4004
+var PORT = process.env.PORT || 5000
 
 function serveMain (req, res) {
   return res.send(mainHTML)
