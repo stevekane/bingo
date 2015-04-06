@@ -1,0 +1,22 @@
+<!doctype html>
+<head>
+  <title>Bingo card generator</title>
+  <link rel='stylesheet' href='/vendor/bootstrap-3.3.4-dist/css/bootstrap.css'>
+</head>
+<body>
+  <form method='POST'>
+    <div class="form-group">
+      <label>List of phrases</label>
+      <textarea class="form-control" name='phrases'></textarea>
+    </div>
+    <div class="form-group">
+      <label>Number of pages</label>
+      <input class="form-control" name='count'></input>
+    </div>
+    <div class="form-group">
+      <label>Enter url for image</label>
+      <input class="form-control" name='freeUrl'></input>
+    </div>
+    <button type="submit" class="btn btn-success">Create</button>
+  </form>
+</body>
